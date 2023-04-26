@@ -1,0 +1,33 @@
+    #app {
+      background: #fff;
+      border-radius: 8px;
+      padding: 30px;
+      transition: all 0.2s;
+    }
+
+    select {
+      margin: 7px;
+      padding: 7px;
+    }
+
+    /* for tab responsive */
+    @media only screen and (min-width: 481px) and (max-width: 768px) {
+     #app{
+       padding: 25px;
+     }
+    }
+
+    /* for desktop responsive */
+    @media only screen and (min-width: 769px) {
+       #app{
+       padding: 25px;
+     }
+     select {
+      margin: 5px;
+      padding: 5px;
+    }
+     button{
+      padding: 4px;
+      font-size: 12px;
+    }
+    }
