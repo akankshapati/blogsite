@@ -1,17 +1,17 @@
 import React from 'react'
 import './Navbar.css'
-import {  NavLink } from 'react-router-dom'
+import {  Link } from 'react-router-dom'
 
 
 const Navbar = () => {
     return (
       
-            <div className=' flex navbar'>
-                <div className="right_nav">
-                    <span><b>Blog</b></span>
+            <div className='navbar'>
+                <div className="navbar__right">
+                    <span>Blog</span>
                 </div>
-                <div className="left_nav">
-                    <NavLink to='/Allblogs'>All Blogs</NavLink>
+                <div className="navbar__left">
+                    <Link to={'/Allblogs'}>All Blogs</Link>
                 </div>
             </div>
     )

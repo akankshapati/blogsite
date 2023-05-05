@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import './InputForm.css'
-import { Form } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
+
 
 const InputForm = () => {
+    const [year, setYear] = useState("");
+    const [month, setMonth] = useState("");
+
 
     const onChangeYear = e => {
         console.log("selected value:", e.target.value);
+        setYear(e.target.value)
     };
     const getDropListYear = () => {
         const year = new Date().getFullYear();
@@ -17,6 +22,7 @@ const InputForm = () => {
     };
     const onChangeMonth = e => {
         console.log("selected value:", e.target.value);
+        setMonth( e.target.value)
     };
     const getDropListMonth = () => {
         const month = ["January", "February", "March", "April", "May", "June",
@@ -29,16 +35,43 @@ const InputForm = () => {
         );
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert('the date is:',  {month});
+    }
+
     return (
-        <div id='app'>
-            <strong>Year</strong> <select onChange={onChangeYear}>
+        <>
+        <form className='inputForm' onSubmit={handleSubmit}>
+            <label>Year
+                <select 
+                name='year'
+                onChange={onChangeYear} 
+                value={year}> 
                 {getDropListYear()}
-            </select>&nbsp;&nbsp;
-            <strong>Month</strong> <select onChange={onChangeMonth}>
+                </select>
+            </label>
+            <label>Month
+                <select 
+                name='month'
+                onChange={onChangeMonth} 
+                value={month}> 
                 {getDropListMonth()}
-            </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button className="btn" name="button">Submit</button>
-        </div>
+                </select>
+            </label>
+            <button 
+            className='btn'
+              >
+                Submit
+                </button>
+        </form>
+        {/* {selectedValue && <div style={{ marginTop: 20, lineHeight: '25px' }}>
+        <div><b>Selected Value: </b> {selectedValue}</div>
+      </div>} */}
+
+        </>
+
+
     )
 }
 

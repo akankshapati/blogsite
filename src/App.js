@@ -1,9 +1,9 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import Initial from './pages/Initial';
+import Initial from './pages/Home/Initial';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import ExploreBlog from './pages/ExploreBlog';
-import AllBlogs from './pages/AllBlogs';
+import AllBlogs from './pages/AllBlogs/AllBlogs';
+import Posts from './components/Cards/Posts';
 
 function App() {
   return (
@@ -12,8 +12,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path='/' element={<Initial />}></Route>
-          <Route exact path='/Exploreblog' element={<ExploreBlog />}></Route>
           <Route exact path='/Allblogs' element={<AllBlogs />}></Route>
+          <Route exact path='posts/:id' element={<Posts />}></Route>
         </Routes>
       </BrowserRouter>
     </>

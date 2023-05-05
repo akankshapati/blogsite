@@ -1,23 +1,33 @@
 import React from 'react'
-import { FaArrowRight, FaRegCalendar, FaMapMarkerAlt } from 'react-icons/fa'
-import {  NavLink } from 'react-router-dom';
+import { FaRegCalendar, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa'
+import { Link } from 'react-router-dom';
 
 const Card = (props) => {
     return (
-       
-            <div className="card flex">
-                <div className="card-img">
-                    <img src={props.image} alt="" className='card-img' />
+
+        <div className="blog-card">
+            <div className="blog-card__image">
+                <img src={props.image} alt="card__photo" className='card__photo' />
+            </div>
+            <div className="blog-card__info">
+                <h3 className='blog-card__title'>{props.title}</h3>
+                <p className='blog-card__date'><em><FaRegCalendar />{props.date}</em></p>
+                <p className='blog-card__location'><em><FaMapMarkerAlt />{props.location}</em></p>
+                <div className='button blog-card__button--explore'>
+                    <button><Link
+                        to={`/posts/${props.blogId}`}
+                        id={props.blogId}
+                    >
+                        Explore Blog <FaArrowRight />
+                    </Link></button>
                 </div>
-                <div className="desc">
-                    <h2>{props.title}</h2>
-                    <p><FaRegCalendar />{props.date}</p>
-                    <p><FaMapMarkerAlt />{props.loc}</p>
-                    <button><NavLink to={'/Exploreblog/${props.id}'} state={Card}>Explore Events <FaArrowRight /></NavLink></button>
-                </div>
-            </div>     
-        
+
+            </div>
+
+        </div>
+
     )
+
 }
 
 export default Card

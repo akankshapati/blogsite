@@ -1,26 +1,37 @@
-    #app {
+    .inputForm {
+      width: 54%;
       background: #fff;
-      border-radius: 8px;
-      padding: 30px;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 16px;
       transition: all 0.2s;
+      font-size: 20px;
     }
 
     select {
-      margin: 7px;
-      padding: 7px;
+      margin: 8px;
+      padding: 8px;
+    }
+    button{
+      padding: 4px;
+      font-size: 16px;
     }
 
     /* for tab responsive */
     @media only screen and (min-width: 481px) and (max-width: 768px) {
-     #app{
-       padding: 25px;
+     .inputForm{
+       margin: 25px;
      }
+     button{
+      padding: 4px;
+      font-size: 22px;
+    }
     }
 
     /* for desktop responsive */
     @media only screen and (min-width: 769px) {
-       #app{
-       padding: 25px;
+       .inputForm{
+       margin: 10px;
      }
      select {
       margin: 5px;
@@ -28,6 +39,6 @@
     }
      button{
       padding: 4px;
-      font-size: 12px;
+      font-size: 22px;
     }
     }
