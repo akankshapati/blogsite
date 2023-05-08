@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 import './InputForm.css'
-import ReactDOM from 'react-dom/client';
 
 
-const InputForm = () => {
+const InputForm = (props) => {
     const [year, setYear] = useState("");
     const [month, setMonth] = useState("");
 
-
     const onChangeYear = e => {
-        console.log("selected value:", e.target.value);
+        console.log("selected year:", e.target.value);
         setYear(e.target.value)
     };
     const getDropListYear = () => {
@@ -21,8 +19,8 @@ const InputForm = () => {
         );
     };
     const onChangeMonth = e => {
-        console.log("selected value:", e.target.value);
-        setMonth( e.target.value)
+        console.log("selected month:", e.target.value);
+        setMonth(e.target.value)
     };
     const getDropListMonth = () => {
         const month = ["January", "February", "March", "April", "May", "June",
@@ -37,41 +35,35 @@ const InputForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert('the date is:',  {month});
     }
 
     return (
         <>
-        <form className='inputForm' onSubmit={handleSubmit}>
-            <label>Year
-                <select 
-                name='year'
-                onChange={onChangeYear} 
-                value={year}> 
-                {getDropListYear()}
-                </select>
-            </label>
-            <label>Month
-                <select 
-                name='month'
-                onChange={onChangeMonth} 
-                value={month}> 
-                {getDropListMonth()}
-                </select>
-            </label>
-            <button 
-            className='btn'
-              >
-                Submit
+            <form className='inputForm' >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label> <strong>Year</strong>
+                    <select
+                        name='year'
+                        onChange={onChangeYear}
+                        value={year}>
+                        {getDropListYear()}
+                    </select>
+                </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <label><strong>Month</strong>
+                    <select
+                        name='month'
+                        onChange={onChangeMonth}
+                        value={month}>
+                        {getDropListMonth()}
+                    </select>
+                </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button
+                    className=' button submit-btn'
+                    onSubmit={handleSubmit}
+                >
+                    Submit
                 </button>
-        </form>
-        {/* {selectedValue && <div style={{ marginTop: 20, lineHeight: '25px' }}>
-        <div><b>Selected Value: </b> {selectedValue}</div>
-      </div>} */}
-
+            </form>
         </>
-
-
     )
 }
 

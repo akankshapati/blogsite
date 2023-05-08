@@ -1,37 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from '../../components/Cards/Card';
 import data from '../../components/Cards/data.js'
 import InputForm from '../InputForm';
-import { useParams } from 'react-router-dom';
 
-const AllBlogs = () => {
 
-  const {blogId} = useParams({data});
-   
+const AllBlogs = (props) => {
+
+  const [filteredYear, setFilteredYear] = useState("2023");
+
+  const filterChangeHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
+  };
+
+  // const filteredExpenses = props.data.filter(
+  //   (blog) => blog.date.getFullYear().toString() === filteredYear );
+
+
   return (
     <>
-    
       <div className='container'>
-      <InputForm />
-        {
-        
-        
-        // data.filter((data) => data.blogId === blogId)
-        data.map((val, index) => {
-          return (
-            <>
+        <InputForm
+          selected={filteredYear}
+          onChangeFilter={filterChangeHandler}
+        />
 
-              <Card
-                key={val.id}
-                isfeatured={val.isFeatured}
-                image={val.image}
-                title={val.title}
-                date={val.date}
-                location={val.location}
-              />
-            </>
-          );
-        })}
+        {
+          // filteredExpenses
+          data.map((blog) => {
+            return (
+              <>
+                <Card
+                  key={blog.id}
+                  isfeatured={blog.isFeatured}
+                  image={blog.image}
+                  title={blog.title}
+                  date={blog.date}
+                  location={blog.location}
+                />
+              </>
+            );
+          })}
       </div>
     </>
   )
