@@ -22,7 +22,7 @@
 }
 .post-card__image img{
     border-radius: 50%;
-    border-color: #ffffff;
+    border-color: #fff;
     border-style: solid;
     border-width: 6px;
     width: 70%;
@@ -39,7 +39,7 @@
 }
 /* for tab responsive */
 @media only screen and (min-width: 481px) {
-.post-card__title{
+.postCard__title{
     font-size: 34px;
     font-weight: 600;
 }

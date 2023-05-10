@@ -1,6 +1,5 @@
 import React from 'react'
-import './Initial.css'
-import data from '../../components/Cards/data'
+import data from '../../consts/data'
 import Card from '../../components/Cards/Card'
 
 const Initial = () => {

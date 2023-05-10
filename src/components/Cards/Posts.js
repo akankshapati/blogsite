@@ -1,32 +1,35 @@
 import React from 'react'
 import './Posts.css'
+import data from '../../consts/data'
 import { useParams } from 'react-router-dom'
 import { FaRegCalendar, FaMapMarkerAlt } from 'react-icons/fa'
-import data from './data'
 
 const Posts = () => {
 
-    const { dataId } = useParams();
-    const blog = data.find((blog) => blog.id === dataId);
-    const { title, image, date, location, description } = blog || {};
+    const { postId } = useParams();
 
     return (
-        <>
-            <p className='post-card__title'>{title}</p>
+        <div className="post">
+            {data
+                .filter((item) => item.blogId === postId)
+                .map((item, index) => (
+                    <div key={index}>
+                        <p className='post-card__title'>{item.title}</p>
 
-            <div className="post-card__info">
-                <div className="post-card__image">
-                    <img src={image} alt="" className='card-img' />
-                </div>
-                <div className="post-card__content">
-                <FaRegCalendar /><p className='post-card__date'><em>{date}</em></p>
-                <FaMapMarkerAlt /><p className='post-card__location'><em>{location}</em></p>
+                        <div className="post-card__info">
+                            <div className="post-card__image">
+                                <img src={item.image} alt="" className='card-img' />
+                            </div>
+                            <div className="post-card__content">
+                                <FaRegCalendar /><p className='post-card__date'><em>{item.date}</em></p>
+                                <FaMapMarkerAlt /><p className='post-card__location'><em>{item.location}</em></p>
+                            </div>
+                        </div>
+
+                        <div className='post-card__description'>{item.description}</div>
                     </div>
-            </div>
-
-            <div className='post-card__description'>{description}</div>
-        </>
-
+                ))}
+        </div>
     )
 }
 

@@ -1,7 +1,5 @@
 .navbar {
     display: flex;
-    flex-flow: nowrap row;
-    margin-bottom: 4rem;
     justify-content: space-between;
     padding: 2rem;
     background-color: black;

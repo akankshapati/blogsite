@@ -24,10 +24,3 @@ button{
   font-size: 18px;
   border-radius: 10px 10px;
 }
-@media only screen and (min-width: 769px) {
-  button{
-    border-style: none;
-    padding: 2px;
-    font-size: 12px;
-  }
-}

@@ -1,15 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './InputForm.css'
 
 
 const InputForm = (props) => {
-    const [year, setYear] = useState("");
-    const [month, setMonth] = useState("");
-
-    const onChangeYear = e => {
-        console.log("selected year:", e.target.value);
-        setYear(e.target.value)
-    };
+    const { filteredYear, setFilteredYear, filteredMonth, setFilteredMonth} = props;
     const getDropListYear = () => {
         const year = new Date().getFullYear();
         return (
@@ -18,10 +12,7 @@ const InputForm = (props) => {
             )
         );
     };
-    const onChangeMonth = e => {
-        console.log("selected month:", e.target.value);
-        setMonth(e.target.value)
-    };
+
     const getDropListMonth = () => {
         const month = ["January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
@@ -33,33 +24,31 @@ const InputForm = (props) => {
         );
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+       e.preventDefault();
+       console.log(`Form submitted Year: ${filteredYear} month: ${filteredMonth}`); 
     }
 
     return (
         <>
-            <form className='inputForm' >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <form className='inputForm'  onSubmit={handleSubmit}>
                 <label> <strong>Year</strong>
                     <select
                         name='year'
-                        onChange={onChangeYear}
-                        value={year}>
+                        onChange={(e)=>setFilteredYear(() => e.target.value)}
+                        value={filteredYear}>
                         {getDropListYear()}
                     </select>
-                </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                </label>
                 <label><strong>Month</strong>
                     <select
                         name='month'
-                        onChange={onChangeMonth}
-                        value={month}>
+                        onChange={(e)=>setFilteredMonth(() => e.target.value)}
+                        value={filteredMonth}>
                         {getDropListMonth()}
                     </select>
-                </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button
-                    className=' button submit-btn'
-                    onSubmit={handleSubmit}
-                >
+                </label> 
+                <button className=' button submit-btn' type='submit' >
                     Submit
                 </button>
             </form>

@@ -1,0 +1,59 @@
+    .inputForm {
+      width: 70%;
+      display: flex;
+      justify-content: center;
+      background: #fff;
+      border-radius: 10px;
+      margin: 2x;
+      align-items: center;
+      padding: 10px;
+      transition: all 0.2s;
+      font-size: 20px;
+    }
+
+    select {
+      margin: 6px;
+      padding: 6px;
+    }
+
+    .submit-btn {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    /* for tab responsive */
+    @media only screen and (min-width: 481px) {
+      .inputForm {
+        margin: 25px;
+      }
+
+      select {
+        margin: 8px;
+        padding: 10px;
+      }
+
+      .submit-btn {
+        padding: 6px;
+        font-size: 22px;
+      }
+    }
+
+    /* for desktop responsive */
+    @media only screen and (min-width: 769px) {
+      .inputForm {
+        width: 57%;
+        margin: 2px;
+        padding: 2px;
+      }
+
+      select {
+        margin: 14px;
+        padding: 10px;
+      }
+
+      .submit-btn {
+        width: 20%;
+        padding: 6px;
+        font-size: 22px;
+      }
+    }
