@@ -3,11 +3,13 @@ import './InputForm.css'
 
 
 const InputForm = (props) => {
-    const { filteredYear, setFilteredYear, filteredMonth, setFilteredMonth} = props;
+
+    const { filteredYear, setFilteredYear, filteredMonth, setFilteredMonth } = props;
+
     const getDropListYear = () => {
         const year = new Date().getFullYear();
         return (
-            Array.from(new Array(50), (v, i) =>
+            Array.from(new Array(20), (v, i) =>
                 <option key={i} value={year - i}>{year - i}</option>
             )
         );
@@ -25,17 +27,17 @@ const InputForm = (props) => {
     };
 
     const handleSubmit = (e) => {
-       e.preventDefault();
-       console.log(`Form submitted Year: ${filteredYear} month: ${filteredMonth}`); 
+        e.preventDefault();
+        console.log(`Form submitted Year: ${filteredYear} month: ${filteredMonth}`);
     }
 
     return (
         <>
-            <form className='inputForm'  onSubmit={handleSubmit}>
+            <form className='inputForm' onSubmit={handleSubmit}>
                 <label> <strong>Year</strong>
                     <select
                         name='year'
-                        onChange={(e)=>setFilteredYear(() => e.target.value)}
+                        onChange={(e) => setFilteredYear(() => e.target.value)}
                         value={filteredYear}>
                         {getDropListYear()}
                     </select>
@@ -43,11 +45,11 @@ const InputForm = (props) => {
                 <label><strong>Month</strong>
                     <select
                         name='month'
-                        onChange={(e)=>setFilteredMonth(() => e.target.value)}
+                        onChange={(e) => setFilteredMonth(() => e.target.value)}
                         value={filteredMonth}>
                         {getDropListMonth()}
                     </select>
-                </label> 
+                </label>
                 <button className=' button submit-btn' type='submit' >
                     Submit
                 </button>

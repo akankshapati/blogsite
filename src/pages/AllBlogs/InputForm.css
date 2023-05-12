@@ -41,7 +41,7 @@
     /* for desktop responsive */
     @media only screen and (min-width: 769px) {
       .inputForm {
-        width: 57%;
+        width: 50%;
         margin: 2px;
         padding: 2px;
       }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import moment from 'moment/moment';
 import Card from '../../components/Cards/Card';
 import data from '../../consts/data.js'
 import InputForm from './InputForm';
@@ -11,7 +12,7 @@ const AllBlogs = (props) => {
 
   return (
     <>
-  <p>{filteredMonth}</p>
+      <p>{filteredMonth}</p>
       <div className='container'>
         <InputForm
           filteredYear={filteredYear}
@@ -22,10 +23,10 @@ const AllBlogs = (props) => {
 
         {
           data
-            .filter( (blog) => blog.date.substring(0, 4) === filteredYear || filteredMonth)
+            .filter(((blog) => moment(blog.date).format('YYYY') === filteredYear && moment(blog.date).format('MMMM') === filteredMonth)
+              || ((blog) => moment(blog.date).format('YYYY') === '2023' && moment(blog.date).format('MMMM') === 'January'))
             .map((blog, index) => {
               return (
-
                 <Card
                   key={index}
                   blogId={blog.blogId}
@@ -38,7 +39,6 @@ const AllBlogs = (props) => {
                 />
 
               );
-
             })}
       </div>
     </>
