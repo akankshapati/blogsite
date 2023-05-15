@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Initial />}></Route>
           <Route exact path='/Allblogs' element={<AllBlogs />}></Route>
-          <Route exact path='/posts/:postId' element={<Posts  />}></Route>
+          <Route exact path='/posts' element={<Posts  />}></Route>
         </Routes>
       </BrowserRouter>
     </>

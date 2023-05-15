@@ -23,8 +23,7 @@ const AllBlogs = (props) => {
 
         {
           data
-            .filter(((blog) => moment(blog.date).format('YYYY') === filteredYear && moment(blog.date).format('MMMM') === filteredMonth)
-              || ((blog) => moment(blog.date).format('YYYY') === '2023' && moment(blog.date).format('MMMM') === 'January'))
+            .filter(((blog) => moment(blog.date).format('YYYY') === filteredYear && moment(blog.date).format('MMMM') === filteredMonth))
             .map((blog, index) => {
               return (
                 <Card

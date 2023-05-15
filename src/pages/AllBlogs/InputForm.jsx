@@ -50,7 +50,7 @@ const InputForm = (props) => {
                         {getDropListMonth()}
                     </select>
                 </label>
-                <button className=' button submit-btn' type='submit' >
+                <button  type='submit' className=' button submit-btn'>
                     Submit
                 </button>
             </form>
