@@ -28,7 +28,7 @@ const Card = (props) => {
                 <p className='blog-card__location'><FaMapMarkerAlt /><em>&nbsp;&nbsp;{props.location}</em></p>
 
                 <button className='button blog-card__button--explore' onClick={() => post(props)}>
-                    Explore Blog &nbsp;&nbsp;<FaArrowRight />
+                    Explore Blog &nbsp;&nbsp;<FaArrowRight style={{ margin: "-2px" }} />
                 </button>
             </div>
 

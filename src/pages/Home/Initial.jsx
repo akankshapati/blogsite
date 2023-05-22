@@ -7,7 +7,7 @@ const Initial = () => {
 
   return (
     <div className='container'>
-      {data.map((val) => {
+      {data.map((val,index) => {
         return (
           val.isFeatured &&
           <Card

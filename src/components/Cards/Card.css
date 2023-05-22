@@ -33,13 +33,13 @@
 .blog-card__title {
     font-size: 16px;
     font-weight: 600;
-    line-height: 18px;
+    line-height: 20px;
 }
 
 h3,
 p {
     padding: 2px;
-    margin: 3px;
+    margin: 0px;
 
 }
 
@@ -50,14 +50,15 @@ p {
     margin-left: 2px;
     font-size: 14px;
     font-weight: 400;
-    line-height: 20px;
+    line-height:22px;
 }
 
 .blog-card__button--explore {
+    content: "\f178";
     margin-top: 10px;
     font-size: 14px;
     font-weight: 300;
-    line-height: 22px;
+    line-height: 24px;
     text-align: center;
 }
 

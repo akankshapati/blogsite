@@ -2,9 +2,9 @@
     width: 100%;
     position: absolute;
     display: flex;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 600;
-    line-height: 30px;
+    line-height: 74px;
     justify-content: center;
     background-image: linear-gradient(to right, #27819c, #309abb);
     color: #ffff;
@@ -27,7 +27,7 @@ p {
     margin: 0 auto;
     color: #27cfec;
     padding: 3rem;
-    background-color: #383b3ff1;
+    background-color: #383b3fff;
 }
 
 .post-card__image img {
@@ -86,10 +86,10 @@ p {
 /* for desktop responsive */
 @media only screen and (min-width: 768px) {
     .post-card__title {
-        padding-top: 10px;
-        font-size: 38px;
+        padding-top: 26px;
+        font-size: 56px;
         font-weight: 500;
-        line-height: 36px;
+        line-height: 16px;
     }
 
     .post-card__info {
